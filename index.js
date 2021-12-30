@@ -21,6 +21,6 @@ app.use('/posts', postRoutes);
 
 
 mongoose.connect(process.env.CONNECTION_URL, {useNewUrlParser:true, useUnifiedTopology: true}) //not required but to avoid errors
-        .then(()=>app.listen(PORT, ()=>{console.log(`Server running and connected to mongo on PORT: ${PORT}`)}))
+        .then(()=>app.listen(PORT, "0.0.0.0", ()=>{console.log(`Server running and connected to mongo on PORT: ${PORT}`)}))
         .catch((error)=>console.log(error));
 //mongoose.set('useFindAndModify', false); //not supported in new version
