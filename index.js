@@ -14,7 +14,7 @@ app.use(express.json({limit:"30mb", extended: true}));
 app.use(cors());
 
 app.get('/', (req, res)=>{
-    res.send({"Welcome to Memories Application"})
+    res.send("Welcome to Memories Application")
 })
 
 app.use('/posts', postRoutes);
