@@ -1,0 +1,33 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+      - echo instaling backend dependencies
+        - cd server
+        - npm install
+    build:
+      commands:        
+        - echo starting backend server
+        - npm run start
+    postBuild:
+        commands:
+        - cd ..
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo instaling frontend dependencies
+        - cd client
+        - npm install
+    build:
+      commands:
+        - echo starting frontend app
+        - npm run build
+  artifacts:
+    baseDirectory: ./client/
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
