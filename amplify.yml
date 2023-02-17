@@ -9,7 +9,8 @@ backend:
     build:
       commands:        
         - echo starting backend server
-        - node index.js
+        - cd server
+        - npm run start
     postBuild:
         commands:
         - cd ..
